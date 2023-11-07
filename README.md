@@ -1,2 +1,2 @@
 # GLUT-custom-functions
-A repository that contains custom glut functions that can be used for optimization
+A repository that contains custom glut functions that can be used for optimization of code
