@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 
+
 struct Color
 {
     int r;
@@ -11,10 +12,12 @@ struct Color
     int b;
 };
 
+
 struct Scence
 {
     Color new_color;
 };
+
 
 void _triangle(vector<pair<float, float>> coord, Color color = {0, 0, 0}, float Tx = 0, float Ty = 0, float s = 1)
 {
@@ -36,8 +39,6 @@ void display() {
 
 	glFlush();  								// Render now
 }
-
-
 
 
 int main(int argc, char** argv) {

@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 
+
 struct Color
 {
     int r;
@@ -18,10 +19,10 @@ struct Scence
 };
 
 
-void _polygon(vector<pair<float, float>> coord, Color color = {0, 0, 0}, float Tx = 0, float Ty = 0, float s = 1)
+void _quad(vector<pair<float, float>> coord, Color color = {0, 0, 0}, float Tx = 0, float Ty = 0, float s = 1)
 {
     glColor3ub(color.r, color.g, color.b);
-    glBegin(GL_POLYGON);
+    glBegin(GL_QUADS);
     for (int i = 0; i < coord.size(); i++) {
         glVertex2f(Tx + s * coord[i].first, Ty + s * coord[i].second);
     }
@@ -33,13 +34,11 @@ void display() {
 	glClearColor(1, 1, 1, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-    // Function Call
-    _polygon({{0,2},{2,0},{4,0},{6,2},{4,8},{2,8}});
+	_quad({{2,0},{4,0},{4,4},{2,4}});
+
 
 	glFlush();  								// Render now
 }
-
-
 
 
 int main(int argc, char** argv) {
