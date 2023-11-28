@@ -8,8 +8,8 @@ float _angle1=0.0f;
 
 
 
-void wheel(float radius) {
-
+void wheel(float radius)
+{
     glMatrixMode(GL_MODELVIEW);
     glPushMatrix();
 
@@ -19,7 +19,8 @@ void wheel(float radius) {
     glLineWidth(10);
     glBegin(GL_LINES);                          // Draw a Red 1x1 Square centered at origin
 
-    for(int i=0; i<200; i++) {
+    for(int i=0; i<200; i++) 
+    {
         glColor3ub(0, 255, 0);
         float pi = 3.1416;
         float A = (i*2*pi)/200;
@@ -34,7 +35,8 @@ void wheel(float radius) {
 
 
 
-void drawScene() {
+void drawScene() 
+{
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3d(1,0,0);
 
@@ -45,7 +47,8 @@ void drawScene() {
 
 
 
-void update(int value) {
+void update(int value) 
+{
     _move += .02;
     if(_move > 1.3) {
         _move = -1.0;
@@ -56,7 +59,8 @@ void update(int value) {
 
 
 
-void update1(int value) {
+void update1(int value) 
+{
     _angle1 += 2.0f;
 
     if(_angle1 > 360.0)
