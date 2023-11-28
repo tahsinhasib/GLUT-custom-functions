@@ -1,7 +1,8 @@
+#include <windows.h>
 #include<cstdio>
 #include <GL/gl.h>
 #include <GL/glut.h>
-
+using namespace std;
 
 GLfloat position = 0.0f;
 GLfloat position1 = 0.0f;
@@ -11,33 +12,42 @@ GLfloat speed = 0.1f;
 void dis();
 void display();
 
-void update(int value) {
+void update(int value) 
+{
     if(position <-1.5)
+    {
         position = 1.0f;
+    }
     position -= speed;
 	glutPostRedisplay();
 	glutTimerFunc(100,update,0);
 }
 
 
-void update1(int value) {
+void update1(int value) 
+{
     if(position1 >1.0)
+    {
         position1 = -1.0f;
+    }
     position1 += speed;
 
 	glutPostRedisplay();
 	glutTimerFunc(100,update1,0);
 }
 
-void init() {
+void init() 
+{
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
-void disback(int val) {
+void disback(int val) 
+{
     glutDisplayFunc(display);
 }
 
-void display5() {
+void display5() 
+{
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glPushMatrix();
@@ -50,11 +60,14 @@ void display5() {
     glVertex2f(-0.2f,  0.2f);
     glEnd();
     glPopMatrix();
-    //glutTimerFunc(1500,disback,0);
+
+    glutTimerFunc(1500,disback,0);
+
     glFlush();
 }
 
-void display4(int val) {
+void display4(int val) 
+{
     glutDisplayFunc(display5);
 }
 
@@ -78,11 +91,13 @@ void display3()
     glFlush();
 }
 
-void display2(int val) {
+void display2(int val) 
+{
     glutDisplayFunc(display3);
 }
 
-void display() {
+void display() 
+{
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
 
@@ -108,11 +123,12 @@ void display() {
     glFlush();
 }
 
-void dis() {
+void dis() 
+{
     glutDisplayFunc(display);
 }
 
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
     glutInitWindowSize(320, 320);
